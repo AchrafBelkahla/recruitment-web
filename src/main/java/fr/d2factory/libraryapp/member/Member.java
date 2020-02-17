@@ -10,14 +10,18 @@ public abstract class Member {
     /**
      * An initial sum of money the member has
      */
+
     private float wallet;
 
+    public Member(float wallet) {
+        this.wallet=wallet;
+    }
     /**
      * The member should pay their books when they are returned to the library
      *
      * @param numberOfDays the number of days they kept the book
      */
-    public abstract void payBook(int numberOfDays);
+    public abstract void payBook(int numberOfDays) throws InsufficientFundsException;
 
     public float getWallet() {
         return wallet;
